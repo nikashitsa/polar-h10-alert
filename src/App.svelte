@@ -49,6 +49,9 @@
   }
 
   function beat(event) {
+    if (hearRateBeat) return;
+    hearRateBeat = true;
+
     var heartRateMeasurement = heartRateSensor.parseHeartRate(event.target.value);
     heartRate = heartRateMeasurement.heartRate;
     if (heartRate > maxHeartRate) {
@@ -61,8 +64,6 @@
       highHearRateBeat = false;
     }
 
-    if (hearRateBeat) return;
-    hearRateBeat = true;
     setTimeout(() => {
       hearRateBeat = false;
     }, 300);
@@ -89,9 +90,9 @@
     </div>
 
     <div class="button-group">
-      <button class="button" on:click={() => maxHeartRate -= 5}>−</button>
+      <button class="button" on:click={() => maxHeartRate > 0 && (maxHeartRate -= 5)}>−</button>
       <div class="label">{maxHeartRate}</div>
-      <button class="button" on:click={() => maxHeartRate += 5}>+</button>
+      <button class="button" on:click={() => maxHeartRate < 300 && (maxHeartRate += 5)}>+</button>
     </div>
 
     <button class="button" on:click={start}>Start</button>
