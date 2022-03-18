@@ -12,6 +12,7 @@
     "@rollup/plugin-node-resolve": "^11.0.0",
     "howler": "^2.2.3",
     "node-sass": "^7.0.1",
+    "nouislider": "^15.5.1",
     "rollup": "^2.3.4",
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-scss": "^3.0.0",

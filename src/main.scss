@@ -52,17 +52,39 @@ h1 {
   }
 }
 
-.button-group {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 40px;
-  .button {
-    flex-basis: 33.33%;
-  }
+.slider-group {
+  margin-bottom: 60px;
   .label {
-    flex-basis: 33.33%;
     font-size: 24px;
+    margin-bottom: 30px;
+  }
+  .noUi-horizontal {
+    height: 1px;
+    border: none;
+  }
+  .noUi-target {
+    background-color: #fff;
+    box-shadow: none;
+    margin: 0 17px;
+  }
+  .noUi-connect {
+    background: red;
+  }
+  .noUi-horizontal {
+    .noUi-handle {
+      border-radius: 2px;
+      height: 34px;
+      width: 34px;
+      top: -16px;
+      background: black;
+      box-shadow: none;
+      border: none;
+      border: 1px solid white;
+      cursor: pointer;
+      &::before, &::after {
+        content: none;
+      }
+    }
   }
 }
 
@@ -77,6 +99,6 @@ h1 {
 .heartrate-beat {
   animation: heartbeat .3s infinite;
 }
-.heartrate-high {
+.heartrate-alert {
   color: red;
 }
