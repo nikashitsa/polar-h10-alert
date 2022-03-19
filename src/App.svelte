@@ -42,9 +42,6 @@
     try {
       await heartRateSensor.characteristicHeartRate.startNotifications();
       heartRateSensor.characteristicHeartRate.addEventListener('characteristicvaluechanged', beat);
-      setInterval(() => {
-        beat();
-      }, 1000);
     } catch (err) {
       alert(err);
       step = 'home';
