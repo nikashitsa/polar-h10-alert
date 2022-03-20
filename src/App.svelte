@@ -97,4 +97,7 @@
   {:else if step === 'run'}
   <StepRun isTooHigh={isTooHigh} isTooLow={isTooLow} hearRateBeat={hearRateBeat} heartRate={heartRate} stop={stop} />
   {/if}
+  <div class="footer">
+    <a href="https://github.com/nikashitsa/polar-h10-alert">Source code</a>
+  </div>
 </div>

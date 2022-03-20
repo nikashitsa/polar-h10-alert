@@ -10,6 +10,9 @@ html, body {
   user-select: none;
   -webkit-user-select: none;
 }
+a, a:visited, a:hover, a:active {
+  color: inherit;
+}
 
 .container {
   display: flex;
@@ -27,6 +30,12 @@ html, body {
   text-align: center;
   padding: 40px;
   max-width: 500px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 20px;
+  font-size: 14px;
 }
 
 h1 {
