@@ -4,6 +4,8 @@
   import StepHome from './steps/Home.svelte';
   import StepSetup from './steps/Setup.svelte';
   import StepRun from './steps/Run.svelte';
+  import highBeepPath from './assets/sound/high_beep.mp3';
+  import lowBeepPath from './assets/sound/low_beep.mp3';
 
   Howler.autoUnlock = false;
 
@@ -68,13 +70,13 @@
 
     if (heartRate > max) {
       const highBeep = new Howl({
-        src: ['sound/high_beep.mp3']
+        src: [highBeepPath]
       });
       highBeep.play();
       isTooHigh = true;
     } else if (heartRate < min) {
       const lowBeep = new Howl({
-        src: ['sound/low_beep.mp3']
+        src: [lowBeepPath]
       });
       lowBeep.play();
       isTooLow = true;

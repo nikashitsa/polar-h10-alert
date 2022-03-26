@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import Heart from '../svg/Heart.svelte';
+  import Heart from '../Heart.svelte';
   import noUiSlider from 'nouislider';
   import 'nouislider/dist/nouislider.css';
 

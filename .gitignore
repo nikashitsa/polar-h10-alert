@@ -1,5 +1,4 @@
 polar-ble-sdk
 /node_modules/
-/public/build/
-/public/index.html
+/build/
 .DS_Store
