@@ -22,7 +22,6 @@ module.exports = {
 	output: {
 		path: path.join(__dirname, '/public'),
 		filename: '[name].[fullhash:8].js',
-    clean: true,
 	},
 	module: {
 		rules: [
