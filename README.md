@@ -6,7 +6,7 @@
 
 1. Open https://nikashitsa.github.io/polar-h10-alert/
 2. Click "Connect"
-3. Set min/max BPM
+3. Set min/max BPM and sound volume
 4. Click "Start"
 5. When your BPM goes out limit BPM, you get sound alert
 
