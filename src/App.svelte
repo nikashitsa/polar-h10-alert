@@ -1,20 +1,23 @@
 <script>
   import { HeartRateSensor } from './lib/heartRateSensor';
-  import { Howl, Howler } from 'howler';
   import StepHome from './steps/Home.svelte';
   import StepSetup from './steps/Setup.svelte';
   import StepRun from './steps/Run.svelte';
-  import highBeepPath from './assets/sound/high_beep.mp3';
-  import lowBeepPath from './assets/sound/low_beep.mp3';
+  import { lowBeep, highBeep } from './lib/sound';
 
   Howler.autoUnlock = false;
 
   let isConnecting = false;
   let step = 'home';
   let heartRange = [40, 220];
-  const cache = localStorage.getItem('heartRange');
-  if (cache) {
-    heartRange = cache.split(',');
+  let volume = [90];
+  const cacheHeartRange = localStorage.getItem('heartRange');
+  if (cacheHeartRange) {
+    heartRange = cacheHeartRange.split(',');
+  }
+  const cacheVolume = localStorage.getItem('volume');
+  if (cacheVolume) {
+    volume = cacheVolume.split(',');
   }
   let heartRate = 0;
   let hearRateBeat = false;
@@ -69,16 +72,10 @@
     const [min, max] = heartRange;
 
     if (heartRate > max) {
-      const highBeep = new Howl({
-        src: [highBeepPath]
-      });
-      highBeep.play();
+      highBeep(volume[0]);
       isTooHigh = true;
     } else if (heartRate < min) {
-      const lowBeep = new Howl({
-        src: [lowBeepPath]
-      });
-      lowBeep.play();
+      lowBeep(volume[0]);
       isTooLow = true;
     } else {
       isTooHigh = false;
@@ -95,7 +92,7 @@
   {#if step === 'home'}
   <StepHome connect={connect} />
   {:else if step === 'setup'}
-  <StepSetup heartRange={heartRange} start={start} />
+  <StepSetup heartRange={heartRange} volume={volume} start={start} />
   {:else if step === 'run'}
   <StepRun isTooHigh={isTooHigh} isTooLow={isTooLow} hearRateBeat={hearRateBeat} heartRate={heartRate} stop={stop} />
   {/if}
