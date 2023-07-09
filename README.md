@@ -15,4 +15,7 @@
 - [Polar H10](https://www.polar.com/us-en/products/accessories/h10_heart_rate_sensor)
 - [Supported browsers](https://caniuse.com/web-bluetooth). For iOS use [Bluefy](https://apps.apple.com/us/app/bluefy-web-ble-browser/id1492822055).
 
+### Other platforms
+- [Android](https://github.com/nikashitsa/polar-alert-android)
+
 [Buy me a coffee](https://www.paypal.com/donate/?hosted_button_id=DR69Z26Z8DJVE) ☕️
