@@ -16,6 +16,8 @@
 - [Supported browsers](https://caniuse.com/web-bluetooth). For iOS use [Bluefy](https://apps.apple.com/us/app/bluefy-web-ble-browser/id1492822055).
 
 ### Other platforms
+
 - [Android](https://github.com/nikashitsa/polar-alert-android)
+- [iOS](https://github.com/nikashitsa/polar-alert-ios)
 
 [Buy me a coffee](https://www.paypal.com/donate/?hosted_button_id=DR69Z26Z8DJVE) ☕️
