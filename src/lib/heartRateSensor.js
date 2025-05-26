@@ -20,12 +20,15 @@ export class HeartRateSensor {
     });
     this.server = await this.device.gatt.connect();
     this.serviceHeartRate = await this.server.getPrimaryService(SERVICE_HEART_RATE);
-    this.serviceConfiguration = await this.server.getPrimaryService(SERVICE_CONFIGURATION);
-    this.characteristicConfiguration = await this.serviceConfiguration.getCharacteristic(CHARACTERISTIC_CONFIGURATION);
     this.characteristicHeartRate = await this.serviceHeartRate.getCharacteristic(HEART_RATE_CONFIGURATION);
+    try {
+      this.serviceConfiguration = await this.server.getPrimaryService(SERVICE_CONFIGURATION);
+      this.characteristicConfiguration = await this.serviceConfiguration.getCharacteristic(CHARACTERISTIC_CONFIGURATION);
+    } catch (err) {}
   }
 
   async enableMultiConnection() {
+    if (!this.characteristicConfiguration) return;
     await this.characteristicConfiguration.startNotifications();
     this.characteristicConfiguration.addEventListener('characteristicvaluechanged', (event) => {
       const { value } = event.target;
